@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" type="" href="styles.css">
+    <title>Etsy Sell Price</title>
+</head>
+
+<body>
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Renewal Fee</th>
+                            <th>Processing Fee</th>
+                            <th>Regulatory Operations Fee</th>
+                            <th>Transaction Fee</th>
+                            <th>Postage Fee</th>
+                            <th>Total Fees</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feeContainer">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <section class="section">
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column is-three-fifths">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <h1 class="title is-1">Etsy Sell Price Calculator</h1>
+                                <p class="subtitle is-6 is-spaced">Calculate Your Etsy Listing Price to Quickly and Easily Balance Etsy Fees with Profit! The calculator will automatically produce your recommended listing price on Etsy based on the sell price shown in the spreadsheet and the postal price you intend to set there. This ensures that your desired profit will still be present after Etsy gets their share.</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <form class="field" id="etsySellPriceForm">
+                                <div class="field is-grouped">
+                                    <p class="control is-expanded">
+                                        <label class="label" for="spreadsheetPrice">Spreadsheet Sell Price (£):</label>
+                                        <input class="input is-large" type="text" id="spreadsheetPrice" name="spreadsheetPrice">
+                                    </p>
+                                    <p class="control is-expanded">
+                                        <label class="label" for="shippingPrice">Etsy Shipping Price (£):</label>
+                                        <input class="input is-large" type="text" id="shippingPrice" name="shippingPrice" value="2.99">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control">
+                                        <label class="label" for="spreadsheetPrice"></label>
+                                        <button class="button is-fullwidth is-primary is-large">Submit</button>
+                                    </p>
+                                </div>
+                            </form>
+                            <div class="field">
+                                <label for="sellPrice" class="label">Sell Your Product On Etsy For: </label>
+                                <div class="field has-addons">
+                                    <div class="control">
+                                        <a class="button is-static is-large">£</a>
+                                    </div>
+
+                                    <div class="control is-expanded">
+                                        <input class="input is-large" type="number" min="1" step="any" name="sellPrice" readonly id="sellPrice">
+                                    </div>
+                                    <div class="control">
+                                        <button class="button is-large" id="modalShowBtn">Fee Breakdown</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column"></div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
