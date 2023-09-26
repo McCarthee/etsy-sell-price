@@ -1,3 +1,7 @@
+body {
+    background-color: #ececec;
+}
+
 .modal {
     display: flex;
     visibility: hidden;
